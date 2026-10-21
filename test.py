@@ -116,7 +116,3 @@ def cirtification_check(df_filled, selected_course):
             output_lines.append(f"{credits} remain")
 
     return "\n".join(output_lines)
-
-
-res = cirtification_check("kakuteiSeisekiCsv.csv", "中学英語")
-print(res)
