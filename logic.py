@@ -23,6 +23,7 @@ Department = {
 }}
 
 certification = {
+"資格なし" :[],
 "中学英語" : [
 "教育原理",
 "教育関係法規",
@@ -105,9 +106,9 @@ def guraduation_check(df_filled, selected_course):
 
     return "\n".join(output_lines)
 
-def cirtification_check(df_filled, selected_course):
+def cirtification_check(df_filled, selected_certification):
     output_lines = []
-    requirements = certification[selected_course]
+    requirements = certification[selected_certification]
 
     for credits in requirements:
         if credits in df_filled["科目"].values:
