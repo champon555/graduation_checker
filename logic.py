@@ -23,7 +23,6 @@ Department = {
 }}
 
 certification = {
-"資格なし" :[],
 "中学英語" : [
 "教育原理",
 "教育関係法規",
@@ -83,7 +82,7 @@ def load_csv(csv_path):
     df_filled = df_filtered.ffill(axis = 1)
     return df_filled
 
-def guraduation_check(df_filled, selected_course):
+def graduation_check(df_filled, selected_course):
     output_lines = []
     result = df_filled.groupby("科目小区分")["単位数"].sum()
 
@@ -106,7 +105,7 @@ def guraduation_check(df_filled, selected_course):
 
     return "\n".join(output_lines)
 
-def cirtification_check(df_filled, selected_certification):
+def certification_check(df_filled, selected_certification):
     output_lines = []
     requirements = certification[selected_certification]
 
