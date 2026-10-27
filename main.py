@@ -2,6 +2,7 @@ import logic
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter import filedialog
+from tkinter import scrolledtext
 
 def find_csv():
     csv_path = filedialog.askopenfilename()
@@ -19,16 +20,20 @@ def find_csv():
 
     df_filled = logic.load_csv(csv_path)
     grad_res = logic.graduation_check(df_filled, selected_course)
-    print(grad_res)
 
     if selected_certification != "資格なし":
         cer_res = logic.certification_check(df_filled, selected_certification)
-    print(cer_res)
+        final_text = grad_res + "\n\n" + cer_res
+    else:
+        final_text = grad_res
+
+    result_box.delete("1.0", tk.END)
+    result_box.insert(tk.END, final_text)
 
 
 root = tk.Tk()
 root.title("credits checker")
-root.geometry("600x400")
+root.geometry("1000x600")
 
 label_1 = tk.Label(root, text = "専攻を選択してください。" "\n" "ゼミが決まっていない場合は進みたい方を選択してください。", foreground = "white")
 label_1.pack(expand = True)
@@ -54,5 +59,7 @@ check_2.pack(expand = True)
 button = tk.Button(root, text = "ファイルを選択して判定", command = find_csv)
 button.pack(expand = True)
 
+result_box = scrolledtext.ScrolledText(root, width=55, height=18)
+result_box.pack(pady=10)
 
 root.mainloop()
