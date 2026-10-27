@@ -59,7 +59,6 @@ certification = {
     "TEFL（英語科教育法）Ⅲ",
     "TEFL（英語科教育法）Ⅳ"], 8),
     },
-    "教科_合計" : 28,
     "大学が独自に設定する科目" : ([
     "Introduction to SLA and ELTⅠ",
     "Introduction to SLA and ELTⅡ",
@@ -102,7 +101,6 @@ certification = {
     "TEFL（英語科教育法）Ⅲ",
     "TEFL（英語科教育法）Ⅳ"], 8),
     },
-    "教科_合計" : 28,
     "大学が独自に設定する科目" : ([
     "Introduction to SLA and ELTⅠ",
     "Introduction to SLA and ELTⅡ",
@@ -148,7 +146,6 @@ certification = {
     "TEFL（英語科教育法）Ⅲ",
     "TEFL（英語科教育法）Ⅳ"], 8),
     },
-    "教科_合計" : 28,
     "大学が独自に設定する科目" : ([
     "Introduction to SLA and ELTⅠ",
     "Introduction to SLA and ELTⅡ",
@@ -190,14 +187,30 @@ def graduation_check(df_filled, selected_course):
 
 def certification_check(df_filled, selected_certification):
     output_lines = []
+    total_kyoka_credits = 0
+    cleared_category = 0
     requirements = certification[selected_certification]
     for credits in requirements["必修科目"]:
         if credits not in df_filled["科目"].values:
             output_lines.append(f"{credits} remain")
     for category, (subject_list, req_credits) in requirements["教科及び教科の指導法に関する科目"].items():
         earned = df_filled[df_filled["科目"].isin(subject_list)]["単位数"].sum()
+        total_kyoka_credits += earned
         if earned >= req_credits:
+            cleared_category += 1
             output_lines.append(f"{category} cleared")
         else:
             output_lines.append(f"{category} {req_credits - earned} remain")
+    if total_kyoka_credits >= 28 and cleared_category == 5:
+        output_lines.append("教科及び教科の指導法（合計）: clear")
+
+    uni_subjects, uni_req = requirements["大学が独自に設定する科目"]
+    earned_uni = df_filled[df_filled["科目"].isin(uni_subjects)]["単位数"].sum()
+    if earned_uni < uni_req:
+        remain_uni = uni_req - earned_uni
+        output_lines.append(f"大学が独自に設定する科目: {remain_uni} remain")
+    else:
+        output_lines.append("大学が独自に設定する科目: clear")
+
+
     return "\n".join(output_lines)
