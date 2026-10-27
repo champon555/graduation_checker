@@ -23,58 +23,141 @@ Department = {
 }}
 
 certification = {
-"中学英語" : [
-"教育原理",
-"教育関係法規",
-"教育心理学",
-"特別支援教育概論",
-"道徳の指導法",
-"総合的な学習の時間の指導法",
-"特別活動の指導法",
-"教育におけるICT活用",
-"学校相談心理学",
-"教職入門",
-"教育課程論（中等）",
-"教育方法論（中等）",
-"生徒・進路指導論（中等）",
-"中学教育実習",
-"教育実践演習",
-"介護等体験"
-],
-"高校英語" : [
-"教育原理",
-"教育関係法規",
-"教育心理学",
-"特別支援教育概論",
-"総合的な学習の時間の指導法",
-"特別活動の指導法",
-"教育におけるICT活用",
-"学校相談心理学",
-"教職入門",
-"教育課程論（中等）",
-"教育方法論（中等）",
-"生徒・進路指導論（中等）",
-"高校教育実習",
-"教育実践演習",
-],
-"中高英語" : [
-"教育原理",
-"教育関係法規",
-"教育心理学",
-"特別支援教育概論",
-"道徳の指導法",
-"総合的な学習の時間の指導法",
-"特別活動の指導法",
-"教育におけるICT活用",
-"学校相談心理学",
-"教職入門",
-"教育課程論（中等）",
-"教育方法論（中等）",
-"生徒・進路指導論（中等）",
-"中等教育実習",
-"教育実践演習",
-"介護等体験"
-]}
+"中学英語" : {
+    "必修科目" : [
+    "教育原理",
+    "教育関係法規",
+    "教育心理学",
+    "特別支援教育概論",
+    "道徳の指導法",
+    "総合的な学習の時間の指導法",
+    "特別活動の指導法",
+    "教育におけるICT活用",
+    "学校相談心理学",
+    "教職入門",
+    "教育課程論（中等）",
+    "教育方法論（中等）",
+    "生徒・進路指導論（中等）",
+    "中学教育実習",
+    "教育実践演習",
+    "介護等体験"],
+    "教科及び教科の指導法に関する科目" : {
+    "英語学" : (["English GrammarⅠ",
+    "English PhoneticsⅠ",
+    "Introduction to English LinguisticsⅠ",
+    "Introduction to English LinguisticsⅡ"], 1),
+    "英語文学" : (["Reading Literature in EnglishⅠ"], 1),
+    "英語コミュニケーション" : (["Basic Reading & WritingⅠ",
+    "Basic Reading & WritingⅡ",
+    "Advanced Reading & Writing",
+    "Listening & SpeakingⅠ",
+    "Listening & SpeakingⅡ"], 1),
+    "異文化理解" : (["Comparative CultureⅠ",
+    "Intercultural CommunicationⅠ"], 1),
+    "各教科の指導法" : (["TEFL（英語科教育法）Ⅰ",
+    "TEFL（英語科教育法）Ⅱ",
+    "TEFL（英語科教育法）Ⅲ",
+    "TEFL（英語科教育法）Ⅳ"], 8),
+    },
+    "教科_合計" : 28,
+    "大学が独自に設定する科目" : ([
+    "Introduction to SLA and ELTⅠ",
+    "Introduction to SLA and ELTⅡ",
+    "TEFL in PracticeⅡ",
+    "Issues in TESOLⅠ",
+    "Issues in TESOLⅡ",
+    "World EnglishesⅠ"], 4)
+    },
+"高校英語" : {
+    "必修科目" : [
+    "教育原理",
+    "教育関係法規",
+    "教育心理学",
+    "特別支援教育概論",
+    "総合的な学習の時間の指導法",
+    "特別活動の指導法",
+    "教育におけるICT活用",
+    "学校相談心理学",
+    "教職入門",
+    "教育課程論（中等）",
+    "教育方法論（中等）",
+    "生徒・進路指導論（中等）",
+    "高校教育実習",
+    "教育実践演習"],
+    "教科及び教科の指導法に関する科目" : {
+    "英語学" : (["English GrammarⅠ",
+    "English PhoneticsⅠ",
+    "Introduction to English LinguisticsⅠ",
+    "Introduction to English LinguisticsⅡ"], 1),
+    "英語文学" : (["Reading Literature in EnglishⅠ"], 1),
+    "英語コミュニケーション" : (["Basic Reading & WritingⅠ",
+    "Basic Reading & WritingⅡ",
+    "Advanced Reading & Writing",
+    "Listening & SpeakingⅠ",
+    "Listening & SpeakingⅡ"], 1),
+    "異文化理解" : (["Comparative CultureⅠ",
+    "Intercultural CommunicationⅠ"], 1),
+    "各教科の指導法" : (["TEFL（英語科教育法）Ⅰ",
+    "TEFL（英語科教育法）Ⅱ",
+    "TEFL（英語科教育法）Ⅲ",
+    "TEFL（英語科教育法）Ⅳ"], 8),
+    },
+    "教科_合計" : 28,
+    "大学が独自に設定する科目" : ([
+    "Introduction to SLA and ELTⅠ",
+    "Introduction to SLA and ELTⅡ",
+    "TEFL in PracticeⅡ",
+    "Issues in TESOLⅠ",
+    "Issues in TESOLⅡ",
+    "World EnglishesⅠ"], 8)
+    }
+,
+"中高英語" :  {
+    "必修科目" : [
+    "教育原理",
+    "教育関係法規",
+    "教育心理学",
+    "特別支援教育概論",
+    "道徳の指導法",
+    "総合的な学習の時間の指導法",
+    "特別活動の指導法",
+    "教育におけるICT活用",
+    "学校相談心理学",
+    "教職入門",
+    "教育課程論（中等）",
+    "教育方法論（中等）",
+    "生徒・進路指導論（中等）",
+    "中等教育実習",
+    "教育実践演習",
+    "介護等体験"],
+    "教科及び教科の指導法に関する科目" : {
+    "英語学" : (["English GrammarⅠ",
+    "English PhoneticsⅠ",
+    "Introduction to English LinguisticsⅠ",
+    "Introduction to English LinguisticsⅡ"], 1),
+    "英語文学" : (["Reading Literature in EnglishⅠ"], 1),
+    "英語コミュニケーション" : (["Basic Reading & WritingⅠ",
+    "Basic Reading & WritingⅡ",
+    "Advanced Reading & Writing",
+    "Listening & SpeakingⅠ",
+    "Listening & SpeakingⅡ"], 1),
+    "異文化理解" : (["Comparative CultureⅠ",
+    "Intercultural CommunicationⅠ"], 1),
+    "各教科の指導法" : (["TEFL（英語科教育法）Ⅰ",
+    "TEFL（英語科教育法）Ⅱ",
+    "TEFL（英語科教育法）Ⅲ",
+    "TEFL（英語科教育法）Ⅳ"], 8),
+    },
+    "教科_合計" : 28,
+    "大学が独自に設定する科目" : ([
+    "Introduction to SLA and ELTⅠ",
+    "Introduction to SLA and ELTⅡ",
+    "TEFL in PracticeⅡ",
+    "Issues in TESOLⅠ",
+    "Issues in TESOLⅡ",
+    "World EnglishesⅠ"], 8)
+    }
+}
 
 def load_csv(csv_path):
     df = pd.read_csv(csv_path, skiprows = 8, usecols = [0,1,2,3,4,5,6,7,8,9], encoding = "cp932")
@@ -108,11 +191,13 @@ def graduation_check(df_filled, selected_course):
 def certification_check(df_filled, selected_certification):
     output_lines = []
     requirements = certification[selected_certification]
-
-    for credits in requirements:
-        if credits in df_filled["科目"].values:
-            output_lines.append(f"{credits} cleared")
-        else:
+    for credits in requirements["必修科目"]:
+        if credits not in df_filled["科目"].values:
             output_lines.append(f"{credits} remain")
-
+    for category, (subject_list, req_credits) in requirements["教科及び教科の指導法に関する科目"].items():
+        earned = df_filled[df_filled["科目"].isin(subject_list)]["単位数"].sum()
+        if earned >= req_credits:
+            output_lines.append(f"{category} cleared")
+        else:
+            output_lines.append(f"{category} {req_credits - earned} remain")
     return "\n".join(output_lines)
