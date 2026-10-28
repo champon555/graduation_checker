@@ -39,7 +39,7 @@ certification = {
     "教育方法論（中等）",
     "生徒・進路指導論（中等）",
     "中学教育実習",
-    "教育実践演習",
+    "教職実践演習",
     "介護等体験"],
     "教科及び教科の指導法に関する科目" : {
     "英語学" : (["English GrammarⅠ",
@@ -65,7 +65,7 @@ certification = {
     "TEFL in PracticeⅡ",
     "Issues in TESOLⅠ",
     "Issues in TESOLⅡ",
-    "World EnglishesⅠ"], 4)
+    "World EnglishesⅠ"], 5)
     },
 "高校英語" : {
     "必修科目" : [
@@ -82,7 +82,7 @@ certification = {
     "教育方法論（中等）",
     "生徒・進路指導論（中等）",
     "高校教育実習",
-    "教育実践演習"],
+    "教職実践演習"],
     "教科及び教科の指導法に関する科目" : {
     "英語学" : (["English GrammarⅠ",
     "English PhoneticsⅠ",
@@ -126,7 +126,7 @@ certification = {
     "教育方法論（中等）",
     "生徒・進路指導論（中等）",
     "中等教育実習",
-    "教育実践演習",
+    "教職実践演習",
     "介護等体験"],
     "教科及び教科の指導法に関する科目" : {
     "英語学" : (["English GrammarⅠ",
@@ -187,12 +187,18 @@ def graduation_check(df_filled, selected_course):
 
 def certification_check(df_filled, selected_certification):
     output_lines = []
+    must_remain = 0
     total_kyoka_credits = 0
     cleared_category = 0
     requirements = certification[selected_certification]
+
     for credits in requirements["必修科目"]:
         if credits not in df_filled["科目"].values:
             output_lines.append(f"{credits} remain")
+            must_remain += 1
+    if must_remain == 0:
+        output_lines.append(f"教職必修: clear")
+        
     for category, (subject_list, req_credits) in requirements["教科及び教科の指導法に関する科目"].items():
         earned = df_filled[df_filled["科目"].isin(subject_list)]["単位数"].sum()
         total_kyoka_credits += earned
