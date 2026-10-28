@@ -23,7 +23,7 @@ def find_csv():
 
     if selected_certification != "資格なし":
         cer_res = logic.certification_check(df_filled, selected_certification)
-        final_text = grad_res + "\n\n" + cer_res
+        final_text = "卒業判定" +"\n\n" + grad_res + "\n\n" +  selected_certification + "\n\n" + cer_res
     else:
         final_text = grad_res
 
@@ -33,7 +33,7 @@ def find_csv():
 
 root = tk.Tk()
 root.title("credits checker")
-root.geometry("1000x600")
+root.geometry("500x600")
 
 label_1 = tk.Label(root, text = "専攻を選択してください。" "\n" "ゼミが決まっていない場合は進みたい方を選択してください。", foreground = "white")
 label_1.pack(expand = True)
