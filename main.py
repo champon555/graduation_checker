@@ -19,7 +19,7 @@ def find_csv():
         selected_certification = "資格なし"
 
     df_filled = logic.load_csv(csv_path)
-    grad_res = logic.graduation_check(df_filled, selected_course)
+    grad_res, untaken_subjects = logic.graduation_check(df_filled, selected_course)
 
     if selected_certification != "資格なし":
         cer_res = logic.certification_check(df_filled, selected_certification)
@@ -27,9 +27,13 @@ def find_csv():
     else:
         final_text = grad_res
 
+    df_class = logic.load_classinfo()
+    suggestion = logic.recommend_courses(df_class, untaken_subjects)
+
+    final_text = final_text + "\n\n" + suggestion
+
     result_box.delete("1.0", tk.END)
     result_box.insert(tk.END, final_text)
-
 
 root = tk.Tk()
 root.title("credits checker")
